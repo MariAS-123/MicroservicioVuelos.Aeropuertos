@@ -1,6 +1,11 @@
-﻿namespace Microservicio.Aeropuertos.Api.Controllers.V1.Internal
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Microservicio.Aeropuertos.Api.Controllers.V1.Internal
 {
-    public class AeropuertoAdminController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AeropuertoAdminController : ControllerBase
     {
     }
 }
