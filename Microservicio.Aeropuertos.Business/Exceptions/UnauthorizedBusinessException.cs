@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Microservicio.Aeropuertos.Business.Exceptions;
 
-namespace Microservicio.Aeropuertos.Business.Exceptions
+public class UnauthorizedBusinessException
+    : BusinessException
 {
-    internal class UnauthorizedBusinessException
+    public UnauthorizedBusinessException(
+        string message)
+        : base(
+            "UNAUTHORIZED",
+            message,
+            401)
     {
     }
 }
