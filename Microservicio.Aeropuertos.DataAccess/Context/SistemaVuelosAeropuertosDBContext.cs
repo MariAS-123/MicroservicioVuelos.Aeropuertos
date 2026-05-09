@@ -1,10 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Microservicio.Aeropuertos.DataAccess.Context
+using Microservicio.Aeropuertos.DataAccess.Entities;
+
+namespace Microservicio.Aeropuertos.DataAccess.Context;
+
+public class SistemaVuelosAeropuertosDBContext
+    : DbContext
 {
-    internal class SistemaVuelosAeropuertosDBContext
+    public SistemaVuelosAeropuertosDBContext(
+        DbContextOptions<SistemaVuelosAeropuertosDBContext> options)
+        : base(options)
     {
+    }
+
+    // ============================================================
+    // DBSETS
+    // ============================================================
+    public DbSet<AeropuertoEntity> Aeropuertos =>
+        Set<AeropuertoEntity>();
+
+    // ============================================================
+    // MODEL CONFIGURATION
+    // ============================================================
+    protected override void OnModelCreating(
+        ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.ApplyConfigurationsFromAssembly(
+            typeof(SistemaVuelosAeropuertosDBContext).Assembly);
     }
 }
