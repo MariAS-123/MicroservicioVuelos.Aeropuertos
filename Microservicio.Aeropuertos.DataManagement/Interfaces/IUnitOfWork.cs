@@ -1,10 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Microservicio.Aeropuertos.DataManagement.Interfaces;
 
-namespace Microservicio.Aeropuertos.DataManagement.Interfaces
+public interface IUnitOfWork
 {
-    internal interface IUnitOfWork
-    {
-    }
+    Task BeginTransactionAsync(
+        CancellationToken cancellationToken = default);
+
+    Task CommitTransactionAsync(
+        CancellationToken cancellationToken = default);
+
+    Task RollbackTransactionAsync(
+        CancellationToken cancellationToken = default);
+
+    Task ExecuteInTransactionAsync(
+        Func<Task> operation,
+        CancellationToken cancellationToken = default);
+
+    Task<T> ExecuteInTransactionAsync<T>(
+        Func<Task<T>> operation,
+        CancellationToken cancellationToken = default);
+
+    Task<int> SaveChangesAsync(
+        CancellationToken cancellationToken = default);
 }
