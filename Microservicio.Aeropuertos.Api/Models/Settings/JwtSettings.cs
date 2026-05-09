@@ -1,6 +1,16 @@
-﻿namespace Microservicio.Aeropuertos.Api.Models.Settings
+﻿namespace Microservicio.Aeropuertos.Api.Model.Settings;
+
+public class JwtSettings
 {
-    public class JwtSettings
-    {
-    }
+    public const string SectionName =
+        "JwtSettings";
+
+    public string SecretKey { get; set; }
+        = string.Empty;
+
+    public string Issuer { get; set; }
+        = string.Empty;
+
+    public string Audience { get; set; }
+        = string.Empty;
 }
