@@ -4,18 +4,16 @@ public class AeropuertoEntity
 {
     public int IdAeropuerto { get; set; }
 
-    public byte[] RowVersion { get; set; } = null!;
-
     public string CodigoIata { get; set; } = null!;
 
     public string? CodigoIcao { get; set; }
 
     public string Nombre { get; set; } = null!;
 
-    // Referencia lógica a MS Geografía
+    // Referencia lógica a MS Geografía (sin FK física)
     public int? IdCiudad { get; set; }
 
-    // Referencia lógica a MS Geografía
+    // Referencia lógica a MS Geografía (sin FK física)
     public int IdPais { get; set; }
 
     public string? ZonaHoraria { get; set; }

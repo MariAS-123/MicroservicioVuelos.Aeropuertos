@@ -25,13 +25,6 @@ public class AeropuertoConfiguration
             .HasColumnName("id_aeropuerto");
 
         // ============================================================
-        // ROW VERSION
-        // ============================================================
-        builder.Property(e => e.RowVersion)
-            .HasColumnName("row_version")
-            .IsRowVersion();
-
-        // ============================================================
         // CÓDIGOS
         // ============================================================
         builder.Property(e => e.CodigoIata)
@@ -70,11 +63,11 @@ public class AeropuertoConfiguration
 
         builder.Property(e => e.Latitud)
             .HasColumnName("latitud")
-            .HasColumnType("decimal(9,6)");
+            .HasColumnType("numeric(9,6)");
 
         builder.Property(e => e.Longitud)
             .HasColumnName("longitud")
-            .HasColumnType("decimal(9,6)");
+            .HasColumnType("numeric(9,6)");
 
         // ============================================================
         // ESTADO

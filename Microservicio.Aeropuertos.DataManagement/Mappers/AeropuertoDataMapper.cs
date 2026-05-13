@@ -11,7 +11,6 @@ public static class AeropuertoDataMapper
         return new AeropuertoDataModel
         {
             IdAeropuerto = entity.IdAeropuerto,
-            RowVersion = entity.RowVersion,
             CodigoIata = entity.CodigoIata,
             CodigoIcao = entity.CodigoIcao,
             Nombre = entity.Nombre,
@@ -37,8 +36,6 @@ public static class AeropuertoDataMapper
         {
             IdAeropuerto = model.IdAeropuerto,
 
-            RowVersion = model.RowVersion,
-
             CodigoIata =
                 model.CodigoIata
                     .Trim()
@@ -54,31 +51,19 @@ public static class AeropuertoDataMapper
             Nombre =
                 model.Nombre.Trim(),
 
-            IdCiudad =
-                model.IdCiudad,
-
-            IdPais =
-                model.IdPais,
+            IdCiudad = model.IdCiudad,
+            IdPais = model.IdPais,
 
             ZonaHoraria =
                 string.IsNullOrWhiteSpace(model.ZonaHoraria)
                     ? null
                     : model.ZonaHoraria.Trim(),
 
-            Latitud =
-                model.Latitud,
-
-            Longitud =
-                model.Longitud,
-
-            Estado =
-                model.Estado,
-
-            Eliminado =
-                model.Eliminado,
-
-            FechaRegistroUtc =
-                model.FechaRegistroUtc,
+            Latitud = model.Latitud,
+            Longitud = model.Longitud,
+            Estado = model.Estado,
+            Eliminado = model.Eliminado,
+            FechaRegistroUtc = model.FechaRegistroUtc,
 
             CreadoPorUsuario =
                 model.CreadoPorUsuario.Trim(),
@@ -88,8 +73,7 @@ public static class AeropuertoDataMapper
                     ? null
                     : model.ModificadoPorUsuario.Trim(),
 
-            FechaModificacionUtc =
-                model.FechaModificacionUtc,
+            FechaModificacionUtc = model.FechaModificacionUtc,
 
             ModificacionIp =
                 string.IsNullOrWhiteSpace(model.ModificacionIp)
@@ -102,9 +86,6 @@ public static class AeropuertoDataMapper
         AeropuertoEntity entity,
         AeropuertoDataModel model)
     {
-        entity.RowVersion =
-            model.RowVersion;
-
         entity.CodigoIata =
             model.CodigoIata
                 .Trim()
@@ -117,36 +98,25 @@ public static class AeropuertoDataMapper
                     .Trim()
                     .ToUpperInvariant();
 
-        entity.Nombre =
-            model.Nombre.Trim();
-
-        entity.IdCiudad =
-            model.IdCiudad;
-
-        entity.IdPais =
-            model.IdPais;
+        entity.Nombre = model.Nombre.Trim();
+        entity.IdCiudad = model.IdCiudad;
+        entity.IdPais = model.IdPais;
 
         entity.ZonaHoraria =
             string.IsNullOrWhiteSpace(model.ZonaHoraria)
                 ? null
                 : model.ZonaHoraria.Trim();
 
-        entity.Latitud =
-            model.Latitud;
-
-        entity.Longitud =
-            model.Longitud;
-
-        entity.Estado =
-            model.Estado;
+        entity.Latitud = model.Latitud;
+        entity.Longitud = model.Longitud;
+        entity.Estado = model.Estado;
 
         entity.ModificadoPorUsuario =
             string.IsNullOrWhiteSpace(model.ModificadoPorUsuario)
                 ? null
                 : model.ModificadoPorUsuario.Trim();
 
-        entity.FechaModificacionUtc =
-            model.FechaModificacionUtc;
+        entity.FechaModificacionUtc = model.FechaModificacionUtc;
 
         entity.ModificacionIp =
             string.IsNullOrWhiteSpace(model.ModificacionIp)
