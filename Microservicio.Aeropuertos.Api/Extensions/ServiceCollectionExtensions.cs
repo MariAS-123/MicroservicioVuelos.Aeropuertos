@@ -86,7 +86,7 @@ public static class ServiceCollectionExtensions
             throw new InvalidOperationException(
                 $"La cadena de conexión '{ConnectionStringName}' no está configurada.");
         }
-
+        /*
         services.AddDbContext<SistemaVuelosAeropuertosDBContext>(options =>
         {
             options.UseNpgsql(connectionString, npgsqlOptions =>
@@ -96,6 +96,11 @@ public static class ServiceCollectionExtensions
                     maxRetryDelay: TimeSpan.FromSeconds(10),
                     errorCodesToAdd: null);
             });
+        });*/
+
+        services.AddDbContext<SistemaVuelosAeropuertosDBContext>(options =>
+        {
+            options.UseNpgsql(connectionString);
         });
     }
 
