@@ -1,5 +1,6 @@
 using Microservicio.Aeropuertos.Api.Extensions;
 using Microservicio.Aeropuertos.Api.Middleware;
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 var builder = WebApplication.CreateBuilder(args);
 
