@@ -113,7 +113,9 @@ public static class AeropuertoBusinessMapper
                 dto.Latitud,
 
             Longitud =
-                dto.Longitud
+                dto.Longitud,
+            Estado = "ACTIVO"  // ✅ agregar
+
         };
     }
 
